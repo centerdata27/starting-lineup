@@ -1,4 +1,4 @@
-import '../src/styles.css';
+import './styles.css';
 import LineupBoard from './components/LineupBoard';
 import StarterForm from './components/StarterForm';
 

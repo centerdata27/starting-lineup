@@ -12,7 +12,7 @@ export default function StarterForm() {
     const [adding, setAdding] = useState(false);
     const [added, setAdded] = useState([]);
 
-    async function handSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
         setAdding(true);
         try {
@@ -30,7 +30,7 @@ export default function StarterForm() {
             <h2 id="add-heading" className="h1" style={{ gap:8 }}>
                 <span aria-hidden="true">+</span>Add Starter
             </h2>
-            <form onSubmit={handSubmit} aria-label="add starter form">
+            <form onSubmit={handleSubmit} aria-label="add starter form">
                 <label>
                     Player Name 
                     <input 
@@ -70,11 +70,13 @@ export default function StarterForm() {
             <div aria-live="polite" aria-atomic="true">
                 {!!added.length && <p><strong>Recent Additions:</strong></p>}
                 <ul className="list">
-                    <li key={p.id}>
-                        <span className="pos">{p.position}</span>
-                        <strong>{p.name}</strong>
-                        <span className="helper">#{p.number}</span>
-                    </li>
+                    {added.map(p => (
+                        <li key={p.id}>
+                            <span className="pos">{p.position}</span>
+                            <strong>{p.name}</strong>
+                            <span className="helper">#{p.number}</span>
+                        </li>
+                    ))}
                 </ul>
             </div>
 

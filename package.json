@@ -38,5 +38,10 @@
     "msw": "^2.11.3",
     "vite": "^7.1.7",
     "whatwg-fetch": "^3.6.20"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

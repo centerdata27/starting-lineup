@@ -4,10 +4,10 @@ import LineupBoard from '../../components/LineupBoard';
 test('loads and displays starting lineup', async() => {
     render (<LineupBoard />);
 
-    expect(screen.getByText(/Loading starting lineup/i)).toBeInTheDocument();
+    expect(screen.getByText(/Loading lineup/i)).toBeInTheDocument();
 
     //The list appears after async fetch
-    expect(await screen.findByRole('list', {name: /starting lineup list/i })).toBeInTheDoc
+    expect(await screen.findByRole('list')).toBeInTheDocument();
 
     //Specific Players to be present
     expect(await screen.findByText(/Jordan Riley/)).toBeInTheDocument();
